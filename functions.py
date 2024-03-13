@@ -15,8 +15,12 @@ from sklearn.impute import IterativeImputer
 
 
 def preprocessing(df):
+    print(f"1.-Before missing values:{df.shape}")
     df = handle_missing_values(df)
+    print(f"2.-After missing values:{df.shape}")
     df = handle_categorical_values(df)
+    print(f"3.-After categorical values:{df.shape}")
+    print(f"Variables generated:{df.columns[95:]}")
     return df 
 
 
